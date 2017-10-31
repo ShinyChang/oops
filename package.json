@@ -1,0 +1,15 @@
+{
+  "name": "oops",
+  "version": "0.1.0",
+  "description": "devoops",
+  "main": "index.js",
+  "repository": "https://github.com/ShinyChang/oops.git",
+  "author": "Shiny <contact@shinychang.net>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^21.2.1"
+  }
+}
