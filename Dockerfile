@@ -8,6 +8,8 @@ RUN apt-get update && apt-get install -y curl apt-transport-https && \
 
 WORKDIR /workspace
 
+EXPOSE 8080
+
 COPY . .
 RUN yarn
-RUN yarn start
+CMD ["yarn", "start"]
