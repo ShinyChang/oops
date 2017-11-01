@@ -7,9 +7,13 @@
   "author": "Shiny <contact@shinychang.net>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "node index.js"
   },
   "devDependencies": {
     "jest": "^21.2.1"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
   }
 }
