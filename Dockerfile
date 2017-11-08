@@ -7,5 +7,3 @@ EXPOSE 8080
 COPY . .
 
 RUN yarn
-
-CMD ["yarn", "start"]
