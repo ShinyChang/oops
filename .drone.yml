@@ -9,5 +9,12 @@ pipeline:
 
   test:
     image: node:8.6.0
+    group: testing
     commands:
       - yarn test
+      
+  lint:
+    image: node:8.6.0
+    group: testing
+    commands:
+      - yarn lint
