@@ -26,3 +26,19 @@ pipeline:
     repo: people22/helloworld
     region: ap-northeast-1
     tags: ${DRONE_COMMIT_SHA:0:8}
+
+  deploy:
+      image: appleboy/drone-ssh
+      host: shiny.people22.com
+      username: ec2-user
+      secrets: 
+        - source: awskey
+          target: ssh_key
+      script:
+        - export AWS_ACCESS_KEY_ID=AKIAJRDOMRBZSMNHNBEQ
+        - export AWS_SECRET_ACCESS_KEY=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
+        - export AWS_DEFAULT_REGION=ap-northeast-1
+        - $(aws ecr get-login --no-include-email --region ap-northeast-1)
+        - docker pull 727939120501.dkr.ecr.ap-northeast-1.amazonaws.com/people22/helloworld:${DRONE_COMMIT_SHA:0:8}
+        - docker stop helloworld
+        - docker run -d --rm -p 3000:3000 --name helloworld 727939120501.dkr.ecr.ap-northeast-1.amazonaws.com/people22/helloworld:${DRONE_COMMIT_SHA:0:8}
