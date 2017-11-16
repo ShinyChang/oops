@@ -23,6 +23,6 @@ pipeline:
     image: plugins/ecr
     access_key: AKIAJRDOMRBZSMNHNBEQ
     secret_key: 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
-    repo: ShinyChang/oops
+    repo: people22/helloworld
     region: ap-northeast-1
     tags: ${DRONE_COMMIT_SHA:0:8}
